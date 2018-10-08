@@ -19,7 +19,7 @@ function makeGraph(error, transactionsData) {
     else {
         chartWidth = windowWidth / 5;
     }
-    
+
     let jockeyWinnersDim = ndx.dimension(dc.pluck("jockey"));
 
     let jockeyWinnersGroup = jockeyWinnersDim.group();
@@ -31,7 +31,7 @@ function makeGraph(error, transactionsData) {
         .radius(chartWidth / 2)
         .group(jockeyWinnersGroup)
         .dimension(jockeyWinnersDim);
-    
+
     let trainerWinnersDim = ndx.dimension(dc.pluck("trainer"));
 
     let trainerWinnersGroup = trainerWinnersDim.group();
@@ -43,8 +43,19 @@ function makeGraph(error, transactionsData) {
         .radius(chartWidth / 2)
         .group(trainerWinnersGroup)
         .dimension(trainerWinnersDim);
-        
-   
-        
-        dc.renderAll();
+
+    let raceGradeDim = ndx.dimension(dc.pluck("grade"));
+
+    let raceGradeGroup = raceGradeDim.group();
+
+    let raceGradePie = dc.pieChart("#raceGrade");
+
+    raceGradePie
+        .width(chartWidth)
+        .radius(chartWidth / 2)
+        .group(raceGradeGroup)
+        .dimension(raceGradeDim);
+
+
+    dc.renderAll();
 }
