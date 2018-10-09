@@ -55,6 +55,18 @@ function makeGraph(error, transactionsData) {
         .radius(chartWidth / 2)
         .group(raceGradeGroup)
         .dimension(raceGradeDim);
+        
+    let raceNameDim = ndx.dimension(dc.pluck("raceknownas"));
+
+    let raceNameGroup = raceNameDim.group();
+
+    let raceNamePie = dc.pieChart("#raceName");
+
+    raceNamePie
+        .width(chartWidth)
+        .radius(chartWidth / 2)
+        .group(raceNameGroup)
+        .dimension(raceNameDim);
 
 
     dc.renderAll();
