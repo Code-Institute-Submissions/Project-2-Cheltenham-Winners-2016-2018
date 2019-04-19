@@ -11,13 +11,13 @@ queue()
 function makeGraph(error, transactionsData) {
     let ndx = crossfilter(transactionsData);
 
-    let chartWidth = 300;
+    let pieWidth = 600;
 
     if (windowWidth < 768) {
-        chartWidth = windowWidth;
+        pieWidth = windowWidth;
     }
     else {
-        chartWidth = windowWidth / 5;
+        chartWidth = windowWidth/2.5;
     }
 
     let jockeyWinnersDim = ndx.dimension(dc.pluck("jockey"));
@@ -27,8 +27,9 @@ function makeGraph(error, transactionsData) {
     let jockeyWinnersPie = dc.pieChart("#winningJockey");
 
     jockeyWinnersPie
-        .width(chartWidth)
-        .radius(chartWidth / 2)
+        .height(350)
+        .width(pieWidth)
+        .radius(pieWidth/2)
         .group(jockeyWinnersGroup)
         .dimension(jockeyWinnersDim);
 
@@ -44,29 +45,106 @@ function makeGraph(error, transactionsData) {
         .group(trainerWinnersGroup)
         .dimension(trainerWinnersDim);
 
-    let raceGradeDim = ndx.dimension(dc.pluck("grade"));
+    // let raceGradeDim = ndx.dimension(dc.pluck("favourite"));
 
-    let raceGradeGroup = raceGradeDim.group();
+    // let raceGradeGroup = raceGradeDim.group();
 
-    let raceGradePie = dc.pieChart("#raceGrade");
+    // let raceGradePie = dc.pieChart("#raceFavourite");
 
-    raceGradePie
-        .width(chartWidth)
-        .radius(chartWidth / 2)
-        .group(raceGradeGroup)
-        .dimension(raceGradeDim);
+    // raceGradePie
+    //     .width(chartWidth)
+    //     .radius(chartWidth / 2)
+    //     .group(raceGradeGroup)
+    //     .dimension(raceGradeDim);
         
-    let raceNameDim = ndx.dimension(dc.pluck("raceknownas"));
+    // let raceNameDim = ndx.dimension(dc.pluck("raceknownas"));
 
-    let raceNameGroup = raceNameDim.group();
+    // let raceNameGroup = raceNameDim.group();
 
-    let raceNamePie = dc.pieChart("#raceName");
+    // let raceNamePie = dc.pieChart("#raceName");
 
-    raceNamePie
-        .width(chartWidth)
-        .radius(chartWidth / 2)
-        .group(raceNameGroup)
-        .dimension(raceNameDim);
+    // raceNamePie
+    //     .width(chartWidth)
+    //     .radius(chartWidth / 2)
+    //     .group(raceNameGroup)
+    //     .dimension(raceNameDim);
+        
+        
+        
+    
+    
+    
+        //---------Winning Jockey--------//
+    var jockeyNames = ndx.dimension(function(d) {
+        return d["jockey"];
+    });
+    var numJockeyNames = jockeyNames.group();
+
+    selectField = dc.selectMenu('#jockey-select')
+        .dimension(jockeyNames)
+        .group(numJockeyNames);
+    
+    
+    //---------Winning Trainer--------//    
+    var trainerNames = ndx.dimension(function(d) {
+        return d["trainer"];
+    });
+    var numTrainerNames = trainerNames.group();
+
+    selectField = dc.selectMenu('#trainer-select')
+        .dimension(trainerNames)
+        .group(numTrainerNames);  
+      
+        
+    //---------Race Name--------//    
+    var raceNames = ndx.dimension(function(d) {
+        return d["raceknownas"];
+    });
+    var numRaceNames = raceNames.group();
+
+    selectField = dc.selectMenu('#raceName-select')
+        .dimension(raceNames)
+        .group(numRaceNames);  
+    
+    
+    //---------Grade of Race--------//    
+    var raceGrade = ndx.dimension(function(d) {
+        return d["grade"];
+    });
+    var numRaceGrade = raceGrade.group();
+
+    selectField = dc.selectMenu('#grade-select')
+        .dimension(raceGrade)
+        .group(numRaceGrade);
+        
+    
+    //---------Winning Favourite--------//    
+    var winningFav = ndx.dimension(function(d) {
+        return d["favourite"];
+    });
+    var numWinningFav = winningFav.group();
+
+    selectField = dc.selectMenu('#favourite-select')
+        .dimension(winningFav)
+        .group(numWinningFav);
+        
+        
+     //---------Age--------//    
+    var age = ndx.dimension(function(d) {
+        return d["age"];
+    });
+    var numAge = age.group();
+
+    selectField = dc.selectMenu('#age-select')
+        .dimension(age)
+        .group(numAge);
+        
+    
+
+
+
+
+
 
 
     dc.renderAll();

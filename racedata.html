@@ -5,22 +5,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="home.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.8/dc.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.8/dc.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/queue-async/1.0.7/queue.js"></script>
-
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <title>Cheltenham Festival Winners 2016-2018</title>
 
 </head>
 
 <body>
+    <!--Navbar-->
+    <h2 class="box1">Cheltenham Festival Winners 2016-2018</h2>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+            <a class="navbar-brand" href="home.html">
+                <img src="static/images/cheltenham1.JPG" class="logo-image" alt="image of website logo"></img>
+            </a>
 
-    <div id="winningJockey"></div>
-    <div id="winningTrainer"></div>
-    <div id="raceGrade"></div>
-    <div id="raceName"></div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="racedata.html">Winners' Stats</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Gallery</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <!--End Navbar-->
+
+    <section>
+        <div class="container container-margin">
+            <div class="row">
+                <div class="col-sm-12 col-md-4 col-lg-4 filter">
+                    <h3 class="filter-heading">Apply Your Filters</h3>
+                    <hr>
+                    <div class="nav-item filter-text">Jockey: <span id="jockey-select" class="nav-link"></span></div>
+                    <div class="nav-item filter-text">Trainer: <span id="trainer-select" class="nav-link"></span></div>
+                    <div class="nav-item filter-text">Favourite: <span id="favourite-select" class="nav-link"></span></div>
+                    <div class="nav-item filter-text">Grade: <span id="grade-select" class="nav-link"></span></div>
+                    <div class="nav-item filter-text">Age: <span id="age-select" class="nav-link"></span></div>
+                    <hr>
+                    <div>
+                        <center><a class="reset-button" href="javascript:dc.filterAll(); dc.renderAll();"><strong>Reset All</strong></a></center>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-8 col-lg-8">
+                    <div>
+                        <center>
+                            <div>
+                                <h3>Winning Jockeys</h3>
+                            </div>
+                        </center>
+                        <center>
+                            <div id="winningJockey"></div>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <script src="racedata.js"></script>
 </body>

@@ -1,0 +1,67 @@
+.box1 {
+    width:100vw;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-style: italic;
+}
+
+.box2 {
+    width:100vw;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    font-size: 25px;
+}
+
+.box3 {
+    background-image: url("static/images/horse.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    width:100vw;
+}
+
+.nav-link {
+    color: white!important;
+}
+
+.nav-link:hover {
+    color: darkgray!important;
+}
+
+
+
+.logo-image {
+    height:50px;
+    width: 175px;
+    border-radius: 10px;
+}
+
+.filter {
+    height:480px;
+    width: 100vw;
+    background-color: gray;
+}
+
+.filter-heading {
+    text-align: center;
+}
+
+.filter-text{
+    color: orange;
+}
+
+.reset-button {
+    color: orange;
+    text-decoration: none!important;
+}
+
+.nav-item {
+    text-align: center;
+}
+
+.container-margin {
+    margin-top: 10px;
+}
+
