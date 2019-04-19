@@ -41,9 +41,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="racedata.html">Winners' Stats</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Gallery</a>
-                    </li>
                 </ul>
             </div>
         </nav>
@@ -56,8 +53,9 @@
                 <div class="col-sm-12 col-md-4 col-lg-4 filter">
                     <h3 class="filter-heading">Apply Your Filters</h3>
                     <hr>
-                    <div class="nav-item filter-text">Jockey: <span id="jockey-select" class="nav-link"></span></div>
-                    <div class="nav-item filter-text">Trainer: <span id="trainer-select" class="nav-link"></span></div>
+                    <div class="nav-item filter-text">Year: <span id="year-select" class="nav-link"></span></div>
+                    <div class="nav-item filter-text">Race: <span id="raceName-select" class="nav-link"></span></div>
+                    <div class="nav-item filter-text">Horse: <span id="horse-select" class="nav-link"></span></div>
                     <div class="nav-item filter-text">Favourite: <span id="favourite-select" class="nav-link"></span></div>
                     <div class="nav-item filter-text">Grade: <span id="grade-select" class="nav-link"></span></div>
                     <div class="nav-item filter-text">Age: <span id="age-select" class="nav-link"></span></div>
@@ -66,22 +64,29 @@
                         <center><a class="reset-button" href="javascript:dc.filterAll(); dc.renderAll();"><strong>Reset All</strong></a></center>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-8 col-lg-8">
+                <div class="col-sm-12 col-md-6 col-lg-6"> 
                     <div>
                         <center>
                             <div>
-                                <h3>Winning Jockeys</h3>
+                                <h3 class="graph-heading-jockey">Winning Jockey</h3>
+                                <div id="winningJockey"></div>
                             </div>
                         </center>
+                        
+                    </div>
+                    <div>
                         <center>
-                            <div id="winningJockey"></div>
+                            <div>
+                                <h3 class="graph-heading-trainer">Winning Trainer</h3>
+                                <div id="winningTrainer"></div>
+                            </div>
                         </center>
+                        
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
 
     <script src="racedata.js"></script>
 </body>

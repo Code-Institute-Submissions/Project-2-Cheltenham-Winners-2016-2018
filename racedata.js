@@ -5,7 +5,7 @@ window.onresize = function() {
 }
 
 queue()
-    .defer(d3.csv, "racedata.csv")
+    .defer(d3.csv, "racedata1.csv")
     .await(makeGraph);
 
 function makeGraph(error, transactionsData) {
@@ -17,7 +17,7 @@ function makeGraph(error, transactionsData) {
         pieWidth = windowWidth;
     }
     else {
-        chartWidth = windowWidth/2.5;
+        pieWidth = windowWidth/2.5;
     }
 
     let jockeyWinnersDim = ndx.dimension(dc.pluck("jockey"));
@@ -29,7 +29,7 @@ function makeGraph(error, transactionsData) {
     jockeyWinnersPie
         .height(350)
         .width(pieWidth)
-        .radius(pieWidth/2)
+        .radius(pieWidth/3)
         .group(jockeyWinnersGroup)
         .dimension(jockeyWinnersDim);
 
@@ -40,60 +40,38 @@ function makeGraph(error, transactionsData) {
     let trainerWinnersPie = dc.pieChart("#winningTrainer");
 
     trainerWinnersPie
-        .width(chartWidth)
-        .radius(chartWidth / 2)
+        .height(350)
+        .width(pieWidth)
+        .radius(pieWidth/3)
         .group(trainerWinnersGroup)
         .dimension(trainerWinnersDim);
 
-    // let raceGradeDim = ndx.dimension(dc.pluck("favourite"));
-
-    // let raceGradeGroup = raceGradeDim.group();
-
-    // let raceGradePie = dc.pieChart("#raceFavourite");
-
-    // raceGradePie
-    //     .width(chartWidth)
-    //     .radius(chartWidth / 2)
-    //     .group(raceGradeGroup)
-    //     .dimension(raceGradeDim);
         
-    // let raceNameDim = ndx.dimension(dc.pluck("raceknownas"));
+    let raceNameDim = ndx.dimension(dc.pluck("raceknownas"));
 
-    // let raceNameGroup = raceNameDim.group();
+    let raceNameGroup = raceNameDim.group();
 
-    // let raceNamePie = dc.pieChart("#raceName");
+    let raceNamePie = dc.pieChart("#raceName");
 
-    // raceNamePie
-    //     .width(chartWidth)
-    //     .radius(chartWidth / 2)
-    //     .group(raceNameGroup)
-    //     .dimension(raceNameDim);
-        
+    raceNamePie
+        .height(350)
+        .width(pieWidth)
+        .radius(pieWidth/3)
+        .group(raceNameGroup)
+        .dimension(raceNameDim);
         
         
     
     
-    
-        //---------Winning Jockey--------//
-    var jockeyNames = ndx.dimension(function(d) {
-        return d["jockey"];
+    //---------Winning Horse--------//    
+    var horseNames = ndx.dimension(function(d) {
+        return d["winner"];
     });
-    var numJockeyNames = jockeyNames.group();
+    var numHorseNames = horseNames.group();
 
-    selectField = dc.selectMenu('#jockey-select')
-        .dimension(jockeyNames)
-        .group(numJockeyNames);
-    
-    
-    //---------Winning Trainer--------//    
-    var trainerNames = ndx.dimension(function(d) {
-        return d["trainer"];
-    });
-    var numTrainerNames = trainerNames.group();
-
-    selectField = dc.selectMenu('#trainer-select')
-        .dimension(trainerNames)
-        .group(numTrainerNames);  
+    selectField = dc.selectMenu('#horse-select')
+        .dimension(horseNames)
+        .group(numHorseNames);  
       
         
     //---------Race Name--------//    
@@ -138,6 +116,17 @@ function makeGraph(error, transactionsData) {
     selectField = dc.selectMenu('#age-select')
         .dimension(age)
         .group(numAge);
+        
+    
+    //---------Year--------//    
+    var year = ndx.dimension(function(d) {
+        return d["year"];
+    });
+    var numYear = year.group();
+
+    selectField = dc.selectMenu('#year-select')
+        .dimension(year)
+        .group(numYear);
         
     
 
