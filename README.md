@@ -64,7 +64,7 @@ The image used on the home page was sourced from Google images at www.google.com
 ## Content
 The data used in this application was sourced from website such as www.Sportinglife.com and was pulled together by myself.
 
-##Acknowledgements
+## Acknowledgements
 The inspiration for this application originated from my love of sport and horse racing. Many people enjoy watching racing but again are not sure how to pick a winner as there is so many factors to consider. This application is a simplified version for those who not got the knowledge or understanding of the sport that is horse racing. 
 
 
