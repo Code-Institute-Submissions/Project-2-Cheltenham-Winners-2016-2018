@@ -25,13 +25,13 @@ And finally the sixth filter is ‘Age’ which again may benefit the more advan
 Two pie charts were used to represent the final selections based on the filters applied. As mentioned earlier, the focus of this application is to highlight the most common statistics for the user and not the actually number of winners. 
 
 # Technologies Used
-*HTML – code used to represent output to the user
-*CSS – used to style the code to make it more appealing to the user.
-*Bootstrap – used to enhance the user’s experience and make it effortless
-*Popper.js - a JavaScript library for enabling dropdown.
-*D3.js - a JavaScript library for manipulating documents based on data. 
-*JQuery
-*JavaScript
+* HTML – code used to represent output to the user
+* CSS – used to style the code to make it more appealing to the user.
+* Bootstrap – used to enhance the user’s experience and make it effortless
+* Popper.js - a JavaScript library for enabling dropdown.
+* D3.js - a JavaScript library for manipulating documents based on data. 
+* JQuery
+* JavaScript
 
 # Wireframes
 Wireframes were drawn manually with pen and paper and uploaded to the wireframe folder.
