@@ -1,10 +1,10 @@
 # Cheltenham Winners 2016-2018
 
-As an interested person in horse racing, I find it quite easy to study the form and have  apunt on a horse based on the facts and statistics. To some people it can be very off putting as there is a lot of details to consider if you are trying to back a winner. Some of these factors would be the age of the horse, the going(how soft the ground is), the distance of the race and the recent of form of the horse. IF horse racing is a hobby well then all this is of interest of to you but sometimes a person may want to have a punt on a horse for the big racing festivals which only come around once a year. 
+As an interested person in horse racing, I find it quite easy to study the form and have a punt on a horse based on the facts and statistics. To some people it can be very off putting as there is a lot of details to consider if you are trying to back a winner. Some of these factors would be the age of the horse, the going(how soft the ground is), the distance of the race and the recent form of the horse. If horse racing is a hobby well then all this is of interest to you but sometimes a person may want to have a punt on a horse for the big racing festivals which only come around once a year. 
 
-From the research I have carried ot, it is clear that a person with little to no experience or any great interest in horse racing will still have heard of certain famous trainers and jockeys. For this reason I was inspired to create an application for those people who simple want to back a horse for the Cheltenham Racing festival based on the facts of who the jockey is riding the horse or the trainer who trains the horse. 
+From the research I have carried out, it is clear that a person with little to no experience or any great interest in horse racing will still have heard of certain famous trainers and jockeys. For this reason I was inspired to create an application for those people who simply want to back a horse for the Cheltenham Racing Festival based on the facts of who the jockey is riding or the trainer who trains the horse. 
 
-I have gathered data from the last three Cheltenham Festivals and will add new data each year after the close of the festival. I feel that in ten years time, I will have a copulate amount of data which will help the person pick the most accurate winner based on information given.
+I have gathered data from the last three Cheltenham Festivals and will add new data each year after the close of the festival. I feel that in ten years time, I will have a copulate amount of data which will help the user pick the most accurate winner based on information given.
 
 Although I know for a long time what data I wanted to use for this project, it was testing to figure out what exactly I could chart. Normally you would chart figures but in this project I’m not actually charting the number of winners per race, I am looking at the stats and facts of each race so that you can see and get an idea for which trainer or jockey or both has a good or bad record per race. 
 
@@ -25,13 +25,13 @@ And finally the sixth filter is ‘Age’ which again may benefit the more advan
 Two pie charts were used to represent the final selections based on the filters applied. As mentioned earlier, the focus of this application is to highlight the most common statistics for the user and not the actually number of winners. 
 
 # Technologies Used
-HTML – code used to represent output to the user
-CSS – used to style the code to make it more appealing to the user.
-Bootstrap – used to enhance the user’s experience and make it effortless
-Popper.js - a JavaScript library for enabling dropdown.
-D3.js - a JavaScript library for manipulating documents based on data. 
-JQuery
- JavaScript
+*HTML – code used to represent output to the user
+*CSS – used to style the code to make it more appealing to the user.
+*Bootstrap – used to enhance the user’s experience and make it effortless
+*Popper.js - a JavaScript library for enabling dropdown.
+*D3.js - a JavaScript library for manipulating documents based on data. 
+*JQuery
+*JavaScript
 
 # Wireframes
 Wireframes were drawn manually with pen and paper and uploaded to the wireframe folder.
